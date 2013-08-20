@@ -25,6 +25,9 @@ alias lat="ls -AGFoth"
 # Concatenate and print content of files (add line numbers)
 alias catn="cat -n"
 
+# Fancycat™ -- hat-tip @wilto
+alias c="pygmentize -O style=solarized -f console256 -g"
+
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en1"

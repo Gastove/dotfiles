@@ -22,7 +22,7 @@ source ./lib/help
 source ./lib/list
 source ./lib/utils
 source ./lib/brew
-source ./lib/npm
+source ./lib/pip
 
 # Help text
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
@@ -99,8 +99,8 @@ else
     printf "Updating packages...\n"
     # Install Homebrew formulae
     run_brew
-    # Install Node packages
-    run_npm
+    # Install Pip Packages
+    run_pip
 fi
 
 link() {
@@ -127,9 +127,6 @@ mirrorfiles() {
     link "bash/inputrc"       ".inputrc"
     link "git/gitattributes"  ".gitattributes"
     link "git/gitignore"      ".gitignore"
-    link "vim"                ".vim"
-    link "vim/gvimrc"         ".gvimrc"
-    link "vim/vimrc"          ".vimrc"
 
     e_success "Dotfiles update complete!"
 }

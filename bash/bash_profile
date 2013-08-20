@@ -21,6 +21,13 @@ do
     fi
 done
 
+# Check for a non-version-controlled alias file.
+UNVCED_ALIASES=$HOME/.bash_local_only
+
+if [[ -e ${UNVCED_ALIASES} ]]; then
+    source ${UNVCED_ALIASES}
+fi
+
 unset files
 
 # Only use `brew` after it has been added to the PATH
