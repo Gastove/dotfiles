@@ -31,7 +31,7 @@ alias catn="cat -n"
 # emacs
 alias et="emacsclient -t"
 
-# Fancycat™ -- hat-tip @wilto
+# Fancycat(tm) -- hat-tip @wilto
 alias c="pygmentize -O style=solarized -f console256 -g"
 
 # What the hell aliases do I have again?
