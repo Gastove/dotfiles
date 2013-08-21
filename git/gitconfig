@@ -45,6 +45,11 @@
     # Use custom `.gitignore` and `.gitattributes`
     excludesfile = ~/.gitignore
     attributesfile = ~/.gitattributes
+    editor = emacsclient -t
+
+[user]
+    name = Ross Donaldson
+    email = gastove@gmail.com
 
 [credential]
     helper = osxkeychain
