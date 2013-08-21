@@ -2,8 +2,6 @@
 
 run_pip() {
 
-    pip update
-
     local -a desired_pip_packages=(
         'httpie'
         'pygments'
@@ -12,8 +10,10 @@ run_pip() {
 
     for index in ${!desired_pip_packages[*]}
     do
-        if [ pip list | grep "${desired_pip_packages[index]}"]; then
+        if pip list | grep "${desired_pip_packages[index]}"; then
             pip install ${desired_pip_packages[index]}
+        else
+            printf "Pip package already installed: %s" "${desired_pip_packages[index]}"
         fi
     done
 
