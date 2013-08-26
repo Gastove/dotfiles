@@ -44,7 +44,7 @@ alias c="pygmentize -O style=solarized -f console256 -g"
 # emacs
 alias et="emacsclient -t"
 alias estart="emacs --daemon"
-alias estop="emacsclient -e '(kill-emacs)"
+alias estop="emacsclient -e '(kill-emacs)'"
 
 # Heroku
 alias hgo="git push heroku master"
