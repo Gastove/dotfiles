@@ -22,6 +22,7 @@ run_brew() {
             'git'
             'ack'
             'bash-completion'
+            'aspell --with-lang=en'
             'jpeg'
             'optipng'
             'python'
