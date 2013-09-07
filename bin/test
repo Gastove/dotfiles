@@ -4,6 +4,8 @@ source ./lib/utils
 
 if on_osx; then
     printf 'WHAT IS HAPPENING'
-else
+elif on_deb; then
     printf "This seems like debian"
+else
+    printf "Oh dear."
 fi

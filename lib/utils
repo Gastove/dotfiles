@@ -62,17 +62,11 @@ formula_exists() {
     return 1
 }
 
-# Return the operating system
-get_os() {
-    return $(uname -s)
-}
-
 # Test whether we're on OSX
 on_osx() {
-    if [[ '$(uname -s)'  == 'Darwin' ]]; then
+    if [[ "$(uname -s)" == 'Darwin' ]]; then
         return 0
     fi
-    e_header 'No OSX here'
     return 1
 }
 
@@ -81,6 +75,5 @@ on_deb() {
     if [[ "$(uname -s)" == "Linux" ]]; then
         return 0
     fi
-    e_header 'No Debian here'
     return 1
 }
