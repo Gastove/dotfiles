@@ -73,10 +73,13 @@ fi
 
 # Check for git
 if ! type_exists 'git'; then
-    e_header "Updating Homebrew..."
-    brew update
-    e_header "Installing Git..."
-    brew install git
+    if on_osx; then
+        e_header "Updating Homebrew..."
+        brew update
+        e_header "Installing Git..."
+        brew install git
+    else
+        sudo apt-get install -f -y --install-suggests git
 fi
 
 # Initialize the git repository if it's missing
@@ -108,9 +111,14 @@ if [[ $no_packages ]]; then
     printf "Skipped package installations.\n"
 else
     printf "Updating packages...\n"
-    # Install Homebrew formulae
-    run_brew
-    # Install Pip Packages
+    if on_osx; then
+        # Install Homebrew formulae
+        run_brew
+        # Install Pip Packages
+    elif on_deb; then
+        apt_install_standards
+    fi
+    # Install python packages
     run_pip
 fi
 
@@ -153,12 +161,14 @@ else
     exit 1
 fi
 
-# Ask before potentially overwriting OS X defaults
-seek_confirmation "Warning: This step may modify your OS X system defaults."
+if on_osx; then
+    # Ask before potentially overwriting OS X defaults
+    seek_confirmation "Warning: This step may modify your OSX system defaults."
 
-if is_confirmed; then
-    bash ./bin/osxdefaults
-    e_success "OS X settings updated! You may need to restart."
-else
-    printf "Skipped OS X settings update.\n"
+    if is_confirmed; then
+        bash ./bin/osxdefaults
+        e_success "OS X settings updated! You may need to restart."
+    else
+        printf "Skipped OS X settings update.\n"
+    fi
 fi
