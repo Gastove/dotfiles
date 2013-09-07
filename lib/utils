@@ -31,7 +31,7 @@ seek_confirmation() {
 # Test whether the result of an 'ask' is a confirmation
 is_confirmed() {
     if [[ "$REPLY" =~ ^[Yy]$ ]]; then
-      return 0
+        return 0
     fi
     return 1
 }
@@ -45,7 +45,7 @@ is_git_repo() {
 # $1 - cmd to test
 type_exists() {
     if [ $(type -P $1) ]; then
-      return 0
+        return 0
     fi
     return 1
 }
@@ -59,5 +59,28 @@ formula_exists() {
     fi
 
     e_warning "Missing formula: $1"
+    return 1
+}
+
+# Return the operating system
+get_os() {
+    return $(uname -s)
+}
+
+# Test whether we're on OSX
+on_osx() {
+    if [[ '$(uname -s)'  == 'Darwin' ]]; then
+        return 0
+    fi
+    e_header 'No OSX here'
+    return 1
+}
+
+# Test whether we're on Debian
+on_deb() {
+    if [[ "$(uname -s)" == "Linux" ]]; then
+        return 0
+    fi
+    e_header 'No Debian here'
     return 1
 }

@@ -21,8 +21,17 @@ cd ${DOTFILES_DIRECTORY}
 source ./lib/help
 source ./lib/list
 source ./lib/utils
-source ./lib/brew
+# source ./lib/brew
 source ./lib/pip
+
+if on_osx; then
+    source ./lib/brew
+elif on_deb; then
+    source ./lib/apt
+else
+    e_warning "Can't detect OS! Boo!"
+    exit 1
+fi
 
 # Help text
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
@@ -31,10 +40,10 @@ if [[ "$1" == "-h" || "$1" == "--help" ]]; then
 fi
 
 # List additional software to install
-if [[ "$1" == "-l" || "$1" == "--list" ]]; then
-    run_list
-    exit
-fi
+# if [[ "$1" == "-l" || "$1" == "--list" ]]; then
+    # run_list
+    # exit
+# fi
 
 # Test for known flags
 for opt in $@
@@ -46,16 +55,18 @@ do
     esac
 done
 
+
 # Before relying on Homebrew, check that packages can be compiled
-if ! type_exists 'gcc'; then
+# OSX only
+if on_osx & ! type_exists 'gcc'; then
     e_error "The XCode Command Line Tools must be installed first."
     printf "  Download them from: https://developer.apple.com/downloads\n"
     printf "  Then run: bash ~/.dotfiles/bin/dotfiles\n"
     exit 1
 fi
 
-# Check for Homebrew
-if ! type_exists 'brew'; then
+# OSX only: Check for Homebrew
+if on_osx ! type_exists 'brew'; then
     e_header "Installing Homebrew..."
     ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
 fi
