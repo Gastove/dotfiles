@@ -2,7 +2,7 @@
 
 # bash_profile
 
-source "{$HOME}/.dotfiles/lib/utils"
+source "${HOME}/.dotfiles/lib/utils"
 
 declare -a files=(
     $HOME/.rvm/scripts/rvm # Load RVM into a shell session *as a function*
