@@ -12,7 +12,7 @@ run_pip() {
         'virtualenv'
         'virtualenvwrapper'
         'httpie'
-        'pygments'
+        'Pygments'
     )
 
     for index in ${!desired_pip_packages[*]}
