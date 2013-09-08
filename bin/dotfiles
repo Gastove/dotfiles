@@ -80,6 +80,7 @@ if ! type_exists 'git'; then
         brew install git
     else
         sudo apt-get install -f -y --install-suggests git
+    fi
 fi
 
 # Initialize the git repository if it's missing
