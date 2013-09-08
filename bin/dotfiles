@@ -131,7 +131,7 @@ else
         # Install Pip Packages
     elif on_deb; then
         sudo apt-get update
-        sudo apt-get upgrade
+        sudo apt-get upgrade -y
         apt_install_standards
     fi
     # Install python packages

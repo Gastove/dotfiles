@@ -4,9 +4,9 @@ run_pip() {
 
     local -a desired_pip_packages=(
         'virtualenv'
+        'virtualenvwrapper'
         'httpie'
         'pygments'
-        'pygments-style-solarized'
     )
 
     for index in ${!desired_pip_packages[*]}
