@@ -8,14 +8,14 @@ OS X dotfiles - Nicolas Gallagher - http://nicolasgallagher.com/
 Usage: $(basename "$0") [options]
 
 Options:
-    -h, --help      Print this help text
-    -l, --list      Print a list of additional software to install
-    --no-packages   Suppress package updates
-    --no-sync       Suppress pulling from the remote repository
+    -h, --help            Print this help text
+    -np, --no-packages    Suppress package updates
+    -ns, --no-sync        Suppress pulling from the remote repository
+    -sau, --skip-apt-up   Skip updating apt repo (Deb only)
 
 Documentation can be found at https://github.com/necolas/dotfiles/
 
-Copyright (c) Nicolas Gallagher
+Copyright (c) Nicolas Gallagher, modified by Ross Donaldson
 Licensed under the MIT license.
 EOT
 
