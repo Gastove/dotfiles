@@ -10,6 +10,7 @@ run_pip() {
     fi
 
     local -a desired_pip_packages=(
+        'distribute --upgrade'
         'virtualenv'
         'virtualenvwrapper'
         'httpie'
