@@ -4,7 +4,7 @@ run_pip() {
 
     # Make sure we're using a recent version of pip
 
-    if on_deb && ! "$(pip list)"; then
+    if [[ on_deb && ! "$(pip list)" ]]; then
         printf "Updating pip"
         curl -fsSL https://raw.github.com/pypa/pip/master/contrib/get-pip.py | sudo python
     fi
