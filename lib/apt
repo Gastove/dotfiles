@@ -29,6 +29,7 @@ apt_install_standards() {
     local -a missing_packages
     local -a packages_to_get=(
         'aptitude'
+        'python-setuptools'
         'synapse'
         'texlive-full'
         'google-chrome-stable'
