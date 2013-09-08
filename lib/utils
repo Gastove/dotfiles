@@ -85,7 +85,7 @@ package_installed(){
 
 # Is a Pip package installed?
 pip_package_installed() {
-    if [[ "$(pip list | grep $1)"]]; then
+    if [[ "$(pip list | grep $1)" ]]; then
         printf "Pip package already installed: %s\n" "$1"
         return 0
     fi
