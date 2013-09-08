@@ -17,7 +17,7 @@ apt_ppas() {
 
     if ! apt_repo_exists 'synapse'; then
         printf "Adding Synapse Launcher repo\n"
-        sudo apt-add-repository ppa:synapse-core/ppa
+        sudo apt-add-repository ppa:synapse-core/ppa -y
     fi
 }
 
