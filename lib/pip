@@ -19,8 +19,6 @@ run_pip() {
     do
         if ! pip_package_installed ${desired_pip_packages[index]}; then
             sudo pip install ${desired_pip_packages[index]}
-        else
-            printf "Pip package already installed: %s\n" "${desired_pip_packages[index]}"
         fi
     done
 
