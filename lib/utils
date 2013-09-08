@@ -83,6 +83,17 @@ package_installed(){
     return 1
 }
 
+# Is a Pip package installed?
+pip_package_installed() {
+    if [[ "$(pip list | grep $1)"]]; then
+        printf "Pip package already installed: %s\n" "$1"
+        return 0
+    fi
+
+    e_warning "Pip package missing: $1"
+    return 1
+}
+
 # Test whether we're on OSX
 on_osx() {
     if [[ "$(uname -s)" == 'Darwin' ]]; then
