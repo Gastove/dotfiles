@@ -20,12 +20,14 @@ OSX package management is still via brew; Debian uses apt (though it installs
 aptitude along the way). Os dependent switches are also in places like `bash_aliases`
 and `bash_exports`.
 
-Three other changes:
+Four other changes:
 
 1) I use my own fork of [Emacs Prelude](www.github.com/Gastove/prelude) instead of vim.
 This is managed via a git submodule.
 2) I don't use node, at all; that functionality has been removed.
 3) I've added short commands, as well as a command to skip `apt-get update`.
+4) There's now pip package management as well, auto-installing: virtualenv; httpie;
+virtualenvwrapper; pygments.
 
 ## How to install
 
