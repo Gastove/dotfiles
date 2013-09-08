@@ -69,6 +69,11 @@ if on_deb & ! apt_repo_exists 'google'; then
     sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 fi
 
+if on_deb; then
+    sudo debconf-set-selections <<< 'mysql-server-<version> mysql-server/root_password password '
+    sudo debconf-set-selections <<< 'mysql-server-<version> mysql-server/root_password_again password '
+fi
+
 # Before relying on Homebrew, check that packages can be compiled
 # OSX only
 if on_osx & ! type_exists 'gcc'; then
