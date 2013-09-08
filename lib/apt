@@ -13,7 +13,6 @@ apt_install_standards() {
         'ruby1.9.3'
         'scala-doc'
         'mercurial'
-        'python-pip'
         'emacs24'
         'linux-headers-generic'
     )
