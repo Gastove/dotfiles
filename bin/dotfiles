@@ -58,13 +58,13 @@ done
 
 # Debian only; assure apt repos exist
 # Add an emacs repo
-if on_deb & ! apt_repo_exists 'cassou'; then
+if on_deb && ! apt_repo_exists 'cassou'; then
     printf "Adding Cassou Repo for Emacs 24 Goodness\n"
     sudo apt-add-repository ppa:cassou/emacs
     sudo apt-get purge emacs-snapshot-common emacs-snapshot-bin-common emacs-snapshot emacs-snapshot-el emacs-snapshot-gtk emacs23 emacs23-bin-common emacs23-common emacs23-el emacs23-nox emacs23-lucid auctex emacs24 emacs24-bin-common emacs24-common emacs24-common-non-dfsg
 fi
 
-if on_deb & ! apt_repo_exists 'google'; then
+if on_deb && ! apt_repo_exists 'google'; then
     printf "Adding Google repo for Chrome\n"
     wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
     sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
@@ -77,7 +77,7 @@ fi
 
 # Before relying on Homebrew, check that packages can be compiled
 # OSX only
-if on_osx & ! type_exists 'gcc'; then
+if on_osx && ! type_exists 'gcc'; then
     e_error "The XCode Command Line Tools must be installed first."
     printf "  Download them from: https://developer.apple.com/downloads\n"
     printf "  Then run: bash ~/.dotfiles/bin/dotfiles\n"
@@ -85,7 +85,7 @@ if on_osx & ! type_exists 'gcc'; then
 fi
 
 # OSX only: Check for Homebrew
-if on_osx ! type_exists 'brew'; then
+if on_osx && ! type_exists 'brew'; then
     e_header "Installing Homebrew..."
     ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
 fi
