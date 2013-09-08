@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DOTFILES_DIRECTORY="${HOME}/.dotfiles"
-DOTFILES_TARBALL_PATH="https://github.com/Gastove/dotfiles/tarball/unified"
+DOTFILES_TARBALL_PATH="https://github.com/Gastove/dotfiles/tarball/master"
 DOTFILES_GIT_REMOTE="https://github.com/Gastove/dotfiles"
 
 # If missing, download and extract the dotfiles repository
@@ -19,11 +19,10 @@ fi
 cd ${DOTFILES_DIRECTORY}
 
 source ./lib/help
-source ./lib/list
 source ./lib/utils
-# source ./lib/brew
 source ./lib/pip
 
+# OS-Specific Package Management
 if on_osx; then
     source ./lib/brew
 elif on_deb; then
@@ -39,12 +38,6 @@ if [[ "$1" == "-h" || "$1" == "--help" ]]; then
     exit
 fi
 
-# List additional software to install
-# if [[ "$1" == "-l" || "$1" == "--list" ]]; then
-    # run_list
-    # exit
-# fi
-
 # Test for known flags
 for opt in $@
 do
@@ -57,26 +50,17 @@ do
 done
 
 # Debian only; assure apt repos exist
-# Add an emacs repo
-if on_deb && ! apt_repo_exists 'cassou'; then
-    printf "Adding Cassou Repo for Emacs 24 Goodness\n"
-    sudo apt-add-repository ppa:cassou/emacs
-    sudo apt-get purge emacs-snapshot-common emacs-snapshot-bin-common emacs-snapshot emacs-snapshot-el emacs-snapshot-gtk emacs23 emacs23-bin-common emacs23-common emacs23-el emacs23-nox emacs23-lucid auctex emacs24 emacs24-bin-common emacs24-common emacs24-common-non-dfsg
-fi
-
-if on_deb && ! apt_repo_exists 'google'; then
-    printf "Adding Google repo for Chrome\n"
-    wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-    sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-fi
-
 if on_deb; then
-    sudo debconf-set-selections <<< 'mysql-server-<version> mysql-server/root_password password '
-    sudo debconf-set-selections <<< 'mysql-server-<version> mysql-server/root_password_again password '
+    apt_ppas
 fi
 
+# Debian only; set default MySQL root password
+if on_deb; then
+    set_mysql_default_pass
+fi
+
+# OSX only -- package management via Homebrew
 # Before relying on Homebrew, check that packages can be compiled
-# OSX only
 if on_osx && ! type_exists 'gcc'; then
     e_error "The XCode Command Line Tools must be installed first."
     printf "  Download them from: https://developer.apple.com/downloads\n"
@@ -98,7 +82,7 @@ if ! type_exists 'git'; then
         e_header "Installing Git..."
         brew install git
     else
-        sudo apt-get install -f -y --install-suggests git
+        sudo apt-get install -f -y git
     fi
 fi
 
@@ -107,7 +91,7 @@ if ! is_git_repo; then
     e_header "Initializing git repository..."
     git init
     git remote add origin ${DOTFILES_GIT_REMOTE}
-    git fetch origin unified
+    git fetch origin master
     # Reset the index and working tree to the fetched HEAD
     # (submodules are cloned in the subsequent sync step)
     git reset --hard FETCH_HEAD
@@ -121,7 +105,7 @@ if [[ $no_sync ]]; then
 else
     e_header "Syncing dotfiles..."
     # Pull down the latest changes
-    git pull --rebase origin unified
+    git pull --rebase origin master
     # Update submodules
     git submodule update --recursive --init --quiet
 fi
@@ -170,7 +154,7 @@ mirrorfiles() {
     link "bash/bashrc"        ".bashrc"
     link "bash/bash_profile"  ".bash_profile"
     link "bash/inputrc"       ".inputrc"
-    link "git/gitattributes"  ".gitattributes"
+    link "git/gitattributes"  ".gitnattributes"
     link "git/gitignore"      ".gitignore"
 
     e_success "Dotfiles update complete!"

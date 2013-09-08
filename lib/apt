@@ -1,16 +1,39 @@
 #!/bin/bash
 
+# Make sure all the correct PPAs exist for extra apt packages.
+apt_ppas() {
+
+    if ! apt_repo_exists 'cassou'; then
+        printf "Adding Cassou Repo for Emacs 24 Goodness\n"
+        sudo apt-add-repository ppa:cassou/emacs -y
+        sudo apt-get purge emacs-snapshot-common emacs-snapshot-bin-common emacs-snapshot emacs-snapshot-el emacs-snapshot-gtk emacs23 emacs23-bin-common emacs23-common emacs23-el emacs23-nox emacs23-lucid auctex emacs24 emacs24-bin-common emacs24-common emacs24-common-non-dfsg
+    fi
+
+    if ! apt_repo_exists 'google'; then
+        printf "Adding Google repo for Chrome\n"
+        wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+        sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+    fi
+
+    if ! apt_repo_exists 'synapse'; then
+        printf "Adding Synapse Launcher repo\n"
+        sudo apt-add-repository ppa:synapse-core/ppa
+    fi
+}
+
+
+# Make sure a list of key apt packages are all installed.
 apt_install_standards() {
 
     local list_of_packages
     local -a missing_packages
     local -a packages_to_get=(
-        'curl'
+        'synapse'
         'texlive-full'
         'google-chrome-stable'
         'rails'
-        'scala'
         'ruby1.9.3'
+        'scala'
         'scala-doc'
         'mercurial'
         'emacs24'

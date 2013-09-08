@@ -109,3 +109,9 @@ on_deb() {
     fi
     return 1
 }
+
+# Set default MySQL passwords for Debian
+set_mysql_default_pass() {
+    sudo debconf-set-selections <<< 'mysql-server-<version> mysql-server/root_password password changeme'
+    sudo debconf-set-selections <<< 'mysql-server-<version> mysql-server/root_password_again password changeme'
+}
