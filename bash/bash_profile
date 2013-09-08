@@ -2,6 +2,8 @@
 
 # bash_profile
 
+source .lib/utils
+
 declare -a files=(
     $HOME/.rvm/scripts/rvm # Load RVM into a shell session *as a function*
     $HOME/.dotfiles/bash/bash_options # Options

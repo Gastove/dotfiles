@@ -15,6 +15,8 @@
 # Check that terminfo exists before changing TERM var to xterm-256color
 # Prevents prompt flashing in Mac OS X 10.6 Terminal.app
 
+source ./lib/utils
+
 if [[ -e /usr/share/terminfo/x/xterm-256color || on_deb ]]; then
     export TERM='xterm-256color'
 fi
