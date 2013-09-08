@@ -3,7 +3,8 @@
 run_pip() {
 
     # Make sure we're using a recent version of pip
-    if ! package_installed pip; then
+
+    if on_deb && ! package_installed pip; then
         curl -fsSL https://raw.github.com/pypa/pip/master/contrib/get-pip.py | sudo python
     fi
 

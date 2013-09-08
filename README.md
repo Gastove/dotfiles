@@ -1,22 +1,42 @@
-# Dotfiles (Nicolas Gallagher)
+# Dotfiles (Nicolas Gallagher, revamp by Ross Donaldson)
 
 My OS X dotfiles.
 
 
+## What this Is
+
+So Nicolas Gallagher did this meticulous and completely amazing job setting up
+this self-deploying, self-maintaining, git-backed set of bash scripts. He wrote
+some pretty gorgeous documentation about it, too; you should
+[check it out](www.github.com/necolas/dotfiles). I've left some of it intact here,
+but seriously, go look at his stuff.
+
+This project is an extension of Gallagher's. Gallagher's `dotfiles` are OSX only;
+I develop on both OSX and Debian-based Linux boxes pretty much on the regular.
+Being able to deploy my configs in an automated way is pretty much spectacular for
+me, but maintaining two parallel repos turned out to be a pain in the arse. So!
+I retooled the original `dotfiles` repo to autodetect OS and do the correct thing.
+OSX package management is still via brew; Debian uses apt (though it installs
+aptitude along the way). Os dependent switches are also in places like `bash_aliases`
+and `bash_exports`.
+
+Three other changes:
+
+1) I use my own fork of [Emacs Prelude](www.github.com/Gastove/prelude) instead of vim.
+This is managed via a git submodule.
+2) I don't use node, at all; that functionality has been removed.
+3) I've added short commands, as well as a command to skip `apt-get update`.
+
 ## How to install
 
-The installation step requires the [XCode Command Line
-Tools](https://developer.apple.com/downloads) and may overwrite existing
-dotfiles in your HOME and `.vim` directories.
+On OSX, the installation step requires the [XCode Command Line
+Tools](https://developer.apple.com/downloads). On any OS, this will
+probably overwrite existing dotfiles in your HOME directory. Before installing,
+move local stuff into `.bash_profile.local`; it'll be symlinked in automatically.
 
 ```bash
-$ bash -c "$(curl -fsSL raw.github.com/necolas/dotfiles/master/bin/dotfiles)"
+$ bash -c "$(curl -fsSL raw.github.com/Gastove/dotfiles/master/bin/dotfiles)"
 ```
-
-N.B. If you wish to fork this project and maintain your own dotfiles, you must
-substitute my username for your own in the above command and the 2 variables
-found at the top of the `bin/dotfiles` script.
-
 ## How to update
 
 You should run the update when:
