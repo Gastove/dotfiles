@@ -63,7 +63,7 @@ formula_exists() {
 }
 
 apt_repo_exists(){
-    if apt-cache policy | grep $1; then
+    if [[ "$(apt-cache policy | grep $1)" ]]; then
         printf "Repo already exists: %s\n" "$1"
         return 0
     fi
@@ -74,7 +74,7 @@ apt_repo_exists(){
 
 # Is a Debian package installed?
 package_installed(){
-    if $(dpkg-query -l $1 > /dev/null); then
+    if [[ $(dpkg-query -l $1 > /dev/null) ]]; then
         printf "%s already installed.\n" "$1"
         return 0
     fi
