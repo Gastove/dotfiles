@@ -31,7 +31,9 @@ fi
 unset files
 
 # Only use `brew` after it has been added to the PATH
-bash_completion_path="$(brew --prefix)/etc/bash_completion"
+if on_osx; then
+    bash_completion_path="$(brew --prefix)/etc/bash_completion"
+fi
 
 # Source Bash completion (installed via Homebrew)
 if [[ -r $bash_completion_path ]]; then
