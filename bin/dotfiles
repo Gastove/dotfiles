@@ -49,8 +49,9 @@ fi
 for opt in $@
 do
     case $opt in
-        --no-packages) no_packages=true ;;
-        --no-sync) no_sync=true ;;
+        -np|--no-packages) no_packages=true ;;
+        -ns|--no-sync) no_sync=true ;;
+        -sau|--skip-apt-up) skip_apt=true;;
         -*|--*) e_warning "Warning: invalid option $opt" ;;
     esac
 done
@@ -135,8 +136,12 @@ else
         run_brew
         # Install Pip Packages
     elif on_deb; then
-        sudo apt-get update
-        sudo apt-get upgrade -y
+        if [[ $skip_apt ]]; then
+            e_header "Skipping apt repo update"
+        else
+            sudo apt-get update
+            sudo apt-get upgrade -y
+        fi
         apt_install_standards
     fi
     # Install python packages
