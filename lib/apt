@@ -29,6 +29,8 @@ apt_install_standards() {
     local -a missing_packages
     local -a packages_to_get=(
         'aptitude'
+        'mysql-client'
+        'mysql-server'
         'python-setuptools'
         'synapse'
         'texlive-full'
