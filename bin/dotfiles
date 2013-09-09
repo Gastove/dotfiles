@@ -155,6 +155,7 @@ mirrorfiles() {
     link "bash/inputrc"       ".inputrc"
     link "git/gitattributes"  ".gitnattributes"
     link "git/gitignore"      ".gitignore"
+    link "emacs"              ".emacs.d"
 
     e_success "Dotfiles update complete!"
 }
