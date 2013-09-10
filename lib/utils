@@ -74,7 +74,7 @@ apt_repo_exists(){
 
 # Is a Debian package installed?
 package_installed(){
-    if [[ "$(dpkg-query -l $1)" ]]; then
+    if [[ "$(dpkg -s $1)" ]]; then
         printf "%s already installed.\n" "$1"
         return 0
     fi
