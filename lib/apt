@@ -33,7 +33,7 @@ apt_install_standards() {
         'mysql-server'
         'python-setuptools'
         'synapse'
-        'texlive-full'
+#        'texlive-full'
         'google-chrome-stable'
         'rails'
         'ruby1.9.3'
@@ -41,7 +41,7 @@ apt_install_standards() {
         'scala-doc'
         'mercurial'
         'emacs24'
-        'linux-headers-generic'
+#        'linux-headers-generic'
     )
 
     for index in ${!packages_to_get[*]}
