@@ -49,11 +49,6 @@ do
     esac
 done
 
-# Debian only; assure apt repos exist
-if on_deb; then
-    apt_ppas
-fi
-
 # Debian only; set default MySQL root password
 if on_deb; then
     set_mysql_default_pass
@@ -125,6 +120,7 @@ else
             sudo apt-get update
             sudo apt-get upgrade -y
         fi
+        apt_ppas
         apt_install_standards
     fi
     # Install python packages
