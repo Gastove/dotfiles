@@ -32,6 +32,7 @@ apt_install_standards() {
         'aptitude'
         'mysql-client'
         'mysql-server'
+        'libmysqlclient-dev'
         'python-setuptools'
         'synapse'
         'texlive-full'
