@@ -42,7 +42,7 @@ apt_install_standards() {
         'scala'
         'scala-doc'
         'mercurial'
-        # 'linux-headers-generic'
+        'linux-headers-`uname -r`'
     )
 
     for index in ${!packages_to_get[*]}
