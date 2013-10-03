@@ -35,7 +35,7 @@ apt_install_standards() {
         'libmysqlclient-dev'
         'python-setuptools'
         'synapse'
-        'texlive-full'
+        # 'texlive-full'
         'google-chrome-stable'
         'rails'
         'ruby1.9.3'
