@@ -30,8 +30,8 @@ apt_install_standards() {
     local -a missing_packages
     local -a packages_to_get=(
         'aptitude'
-        'mysql-client'
-        'mysql-server'
+        'mysql-client-5.5'
+        'mysql-server-5.5'
         'libmysqlclient-dev'
         'python-setuptools'
         'synapse'
