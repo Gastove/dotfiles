@@ -39,7 +39,7 @@ alias pgrp="ps ax | grep"
 alias catn="cat -n"
 
 # Fancycat(tm) -- hat-tip @wilto
-alias c="pygmentize -O style=solarized -f console256 -g"
+alias c="pygmentize -O style=twilight -f console256 -g"
 
 # emacs
 alias et="emacsclient -t"
