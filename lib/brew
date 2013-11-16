@@ -28,6 +28,7 @@ run_brew() {
             'python'
             'mercurial'
             'sbt'
+            'scala'
             'emacs'
             'tree'
             'wget'
