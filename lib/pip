@@ -11,6 +11,7 @@ run_pip() {
 
     local -a desired_pip_packages=(
         'distribute --upgrade'
+        'pyflakes'
         'virtualenv'
         'virtualenvwrapper'
         'httpie'
