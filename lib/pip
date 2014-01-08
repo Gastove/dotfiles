@@ -18,6 +18,17 @@ run_pip() {
         'Pygments'
     )
 
+    # OSX Needs certain pip packages Debian can get from apt
+    if [[ on_osx ]]; then
+        desired_pip_packages+=(
+            'scipy'
+            'matplotlib'
+            'pyzmq'
+            'readline'
+            'ipython[all]'
+        )
+    fi
+
     for index in ${!desired_pip_packages[*]}
     do
         if ! pip_package_installed ${desired_pip_packages[index]}; then
