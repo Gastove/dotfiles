@@ -11,11 +11,23 @@ run_pip() {
 
     local -a desired_pip_packages=(
         'distribute --upgrade'
+        'pyflakes'
         'virtualenv'
         'virtualenvwrapper'
         'httpie'
         'Pygments'
     )
+
+    # OSX Needs certain pip packages Debian can get from apt
+    if [[ on_osx ]]; then
+        desired_pip_packages+=(
+            'scipy'
+            'matplotlib'
+            'pyzmq'
+            'readline'
+            'ipython[all]'
+        )
+    fi
 
     for index in ${!desired_pip_packages[*]}
     do

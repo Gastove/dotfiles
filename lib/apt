@@ -24,8 +24,6 @@ apt_ppas() {
 # Make sure a list of key apt packages are all installed.
 apt_install_standards() {
 
-
-
     local list_of_packages
     local -a missing_packages
     local -a packages_to_get=(
@@ -34,6 +32,14 @@ apt_install_standards() {
         'mysql-server-5.5'
         'libmysqlclient-dev'
         'python-setuptools'
+        'python-numpy'
+        'python-scipy'
+        'python-matplotlib'
+        'ipython'
+        'ipython-notebook'
+        'python-pandas'
+        'python-sympy'
+        'python-nose'
         'synapse'
         # 'texlive-full'
         'google-chrome-stable'
