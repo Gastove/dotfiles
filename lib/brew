@@ -21,6 +21,7 @@ run_brew() {
             'coreutils' # GNU core utilities (those that come with OS X are outdated)
             'git'
             'ack'
+            'imagemagick'
             'npm'
             'bash-completion'
             'aspell --with-lang=en'
