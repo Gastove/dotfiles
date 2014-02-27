@@ -1,0 +1,4 @@
+--type-set=markdown:ext:md,markdown,mdown
+--sort-files
+--color
+--pager=less -r
