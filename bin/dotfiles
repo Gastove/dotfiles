@@ -151,7 +151,7 @@ mirrorfiles() {
     link "bash/bashrc"        ".bashrc"
     link "bash/bash_profile"  ".bash_profile"
     link "bash/inputrc"       ".inputrc"
-    link "git/gitattributes"  ".gitnattributes"
+    link "git/gitattributes"  ".gitattributes"
     link "git/gitignore"      ".gitignore"
     link "emacs"              ".emacs.d"
 
