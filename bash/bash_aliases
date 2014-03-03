@@ -42,6 +42,7 @@ alias catn="cat -n"
 
 # Fancycat(tm) -- hat-tip @wilto
 alias c="pygmentize -O style=twilight -f console256 -g"
+catc(){ cat -n "$@" | pygmentize -O style=twilight - console256 -g;}
 
 # emacs
 alias et="emacsclient -t"
