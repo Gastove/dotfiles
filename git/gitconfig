@@ -57,6 +57,9 @@
 [diff]
     tool = mvimdiff
 
+[push]
+    default = simple
+
 [difftool]
     prompt = false
 
