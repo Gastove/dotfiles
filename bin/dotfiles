@@ -158,6 +158,7 @@ mirrorfiles() {
     link "extra/floorc"       ".floorc"
     link "emacs"              ".emacs.d"
 
+
     e_success "Dotfiles update complete!"
 }
 
