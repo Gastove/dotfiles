@@ -26,6 +26,7 @@ run_pip() {
             'pyzmq'
             'readline'
             'ipython'
+            'pandas'
         )
     fi
 
