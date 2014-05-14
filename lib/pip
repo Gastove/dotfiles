@@ -27,6 +27,7 @@ run_pip() {
             'readline'
             'ipython'
             'pandas'
+            'jinja2'
         )
     fi
 
