@@ -4,8 +4,11 @@
 Thumbs.db
 
 # Emacs
-\#* # Emacs buffers
+.\#* # Emacs buffers
 *.org # Org Mode files
+
+# Clojure
+.nrepl-port
 
 # Files that might appear on external disks
 .Spotlight-V100
