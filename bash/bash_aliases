@@ -15,7 +15,7 @@ alias -- -="cd -"
 alias gts="git status"
 alias gtc="git clone"
 
-# Clone a repo, passing user and repo name
+# Clone a repo via ssh, passing user and repo name
 git-get(){ git clone git@github.com:$1/$2.git; }
 # Commit all changes, open default editor for commit message
 alias gta="git commit -a"# Because, that's why
