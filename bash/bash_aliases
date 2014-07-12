@@ -50,6 +50,9 @@ catc(){ cat -n $1 | pygmentize -O style=twilight -f console256 -g;}
 alias et="emacsclient -t"
 alias estart="emacs --daemon"
 alias estop="emacsclient -e '\(kill-emacs\)'"
+alias e=emacs
+alias ec='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n'
+alias emacs='open -a /Applications/Emacs.app $1'
 
 # Heroku
 alias hgo="git push heroku master"
