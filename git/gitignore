@@ -4,8 +4,9 @@
 Thumbs.db
 
 # Emacs
-.\#* # Emacs buffers
-*.org # Org Mode files
+.\#*                            # Emacs buffers
+*.org                           # Org Mode files
+.dir-locals.el                  # Emacs config stuffz.
 
 # Clojure
 .nrepl-port
