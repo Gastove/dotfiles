@@ -41,3 +41,9 @@ fi
 if [[ -r $bash_completion_path ]]; then
     source $bash_completion_path
 fi
+
+# Source virtualenvwrapper script. Maybe make this do location more sensibly?
+venv_wrapper_script="/usr/local/bin/virtualenvwrapper.sh"
+if [[ -r $venv_wrapper_script ]]; then
+    source $venv_wrapper_script
+fi
