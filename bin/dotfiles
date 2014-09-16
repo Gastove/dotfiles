@@ -103,7 +103,7 @@ else
     # Pull down the latest changes
     git pull --rebase origin master
     # Update submodules
-    git submodule update --recursive --init --quiet
+    git submodule foreach git pull origin master
 fi
 
 # Install and update packages
