@@ -34,8 +34,8 @@ run_brew() {
             'emacs'
             'tree'
             'wget'
-            #'gfortran' # Needed for scipy
             'gcc' # Theoretically subsumes gfortran
+            'leiningen'
             'freetype' # For matplotlib
             'pyqt' # Interactive pseudo-terminal
             'zmq' # For IPython
