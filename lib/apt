@@ -47,8 +47,9 @@ apt_install_standards() {
         'ruby1.9.3'
         'scala'
         'scala-doc'
+        'xclip'
         'mercurial'
-        'linux-headers-`uname -r`'
+        # 'linux-headers-`uname -r`'
     )
 
     for index in ${!packages_to_get[*]}
