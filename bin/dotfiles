@@ -162,6 +162,9 @@ mirrorfiles() {
     e_success "Dotfiles update complete!"
 }
 
+e_header "Manually symlinking profiles.clj"
+ln -fs "${DOTFILES_DIRECTORY}/extras/profiles.clj" "${HOME}/.lein/profiles.clj"
+
 # Ask before potentially overwriting files
 seek_confirmation "Warning: This step may overwrite your existing dotfiles."
 
