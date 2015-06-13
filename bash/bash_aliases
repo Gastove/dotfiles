@@ -23,6 +23,9 @@ alias gpom="git push origin master"
 # Allow an empty commit; used *only* to force a Heroku rebuild, if needed.
 alias gempty="git commit --allow-empty"
 
+# Deletes all branches that *have* been merged in to the current branch.
+alias git-scrub="git branch --merged | grep -v "\*" | xargs -n 1 git branch -d"
+
 # List dir contents aliases
 # ref: http://ss64.com/osx/ls.html
 # Long form no user group, color
