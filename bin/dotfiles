@@ -157,7 +157,7 @@ mirrorfiles() {
     link "extra/ackrc"        ".ackrc"
     link "extra/floorc"       ".floorc"
     link "emacs"              ".emacs.d"
-
+    link "extra/profiles.clj" ".lein/profiles.clj"
 
     e_success "Dotfiles update complete!"
 }
