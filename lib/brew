@@ -39,6 +39,8 @@ run_brew() {
             'freetype' # For matplotlib
             'pyqt' # Interactive pseudo-terminal
             'zmq' # For IPython
+            'ctags'
+            'global --with-exuberant-ctags'
             'https://raw.github.com/Homebrew/homebrew-dupes/master/rsync.rb' # Avoid using any custom OS X version of rsync
         )
 
