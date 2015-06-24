@@ -3,15 +3,20 @@
 .DS_Store
 Thumbs.db
 
-# Emacs
-.\#*                            # Emacs buffers
-*.org                           # Org Mode files
-.dir-locals.el                  # Emacs config stuffz.
-.projectile                     # Projects
-GPATH                           # Tag Files
-GRTAGS                          # - Ditto
-GTAGS                           # - Ditto
-TAGS                            # - Likewise
+## Emacs
+# Emacs buffers
+.\#*
+# Org Mode files
+*.org
+# Emacs config stuffz.
+.dir-locals.el
+# Projects
+.projectile
+# Tag Files
+GPATH
+GRTAGS
+GTAGS 
+TAGS  
 
 # Clojure
 .nrepl-port
