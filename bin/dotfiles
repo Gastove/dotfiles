@@ -163,8 +163,7 @@ mirrorfiles() {
 }
 
 e_header "Manually symlinking profiles.clj"
-cd "${HOME}"/.lein
-ln -fs "${DOTFILES_DIRECTORY}/extras/profiles.clj" profiles.clj
+ln -fs "${DOTFILES_DIRECTORY}/extras/profiles.clj" "${HOME}"/.lein/profiles.clj
 cd ~
 
 # Ask before potentially overwriting files
