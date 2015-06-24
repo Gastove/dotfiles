@@ -3,7 +3,11 @@
 # bash_config
 
 # Make emacs the default editor
-export EDITOR="emacs"
+if on_osx; then
+    export EDITOR="ec"
+else
+    export EDITOR="emacs"
+fi
 
 # Ignore duplicate commands in the history
 export HISTCONTROL=ignoredups
