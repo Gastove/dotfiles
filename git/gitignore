@@ -7,7 +7,11 @@ Thumbs.db
 .\#*                            # Emacs buffers
 *.org                           # Org Mode files
 .dir-locals.el                  # Emacs config stuffz.
-.projectile
+.projectile                     # Projects
+GPATH                           # Tag Files
+GRTAGS                          # - Ditto
+GTAGS                           # - Ditto
+TAGS                            # - Likewise
 
 # Clojure
 .nrepl-port
