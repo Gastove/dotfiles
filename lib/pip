@@ -16,6 +16,7 @@ run_pip() {
         'virtualenvwrapper'
         'httpie'
         'Pygments'
+        'pip'
     )
 
     # OSX Needs certain pip packages Debian can get from apt
@@ -35,6 +36,8 @@ run_pip() {
     do
         if ! pip_package_installed ${desired_pip_packages[index]}; then
             pip install ${desired_pip_packages[index]}
+        else
+            pip install --upgrade ${desired_pip_packages[index]}
         fi
     done
 
