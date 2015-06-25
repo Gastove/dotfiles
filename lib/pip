@@ -11,7 +11,7 @@ run_pip() {
 
     local -a desired_pip_packages=(
         'distribute --upgrade'
-        'pyflakes'
+        'flake8'
         'virtualenv'
         'virtualenvwrapper'
         'httpie'
@@ -34,7 +34,7 @@ run_pip() {
     for index in ${!desired_pip_packages[*]}
     do
         if ! pip_package_installed ${desired_pip_packages[index]}; then
-            sudo pip install ${desired_pip_packages[index]}
+            pip install ${desired_pip_packages[index]}
         fi
     done
 
