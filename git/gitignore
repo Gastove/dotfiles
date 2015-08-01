@@ -18,6 +18,9 @@ GRTAGS
 GTAGS 
 TAGS  
 
+# JavaScript
+.tern-port
+
 # Clojure
 .nrepl-port
 
