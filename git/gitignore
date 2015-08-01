@@ -20,6 +20,7 @@ TAGS
 
 # JavaScript
 .tern-port
+.tern-project
 
 # Clojure
 .nrepl-port
