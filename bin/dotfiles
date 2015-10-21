@@ -26,11 +26,12 @@ source ./lib/npm
 # OS-Specific Package Management
 if on_osx; then
     source ./lib/brew
-elif on_deb; then
-    source ./lib/apt
-else
-    e_warning "Can't detect OS! Boo!"
-    exit 1
+    # Start rejiggering for Fedora
+    # elif on_deb; then
+#     source ./lib/apt
+# else
+#     e_warning "Can't detect OS! Boo!"
+#     exit 1
 fi
 
 # Help text
@@ -51,9 +52,9 @@ do
 done
 
 # Debian only; set default MySQL root password
-if on_deb; then
-    set_mysql_default_pass
-fi
+# if on_deb; then
+#     set_mysql_default_pass
+# fi
 
 # OSX only -- package management via Homebrew
 # Before relying on Homebrew, check that packages can be compiled
@@ -77,8 +78,8 @@ if ! type_exists 'git'; then
         brew update
         e_header "Installing Git..."
         brew install git
-    else
-        sudo apt-get install -f -y git
+    # else
+    #     sudo apt-get install -f -y git
     fi
 fi
 
@@ -115,15 +116,15 @@ else
         # Install Homebrew formulae
         run_brew
         run_npm
-    elif on_deb; then
-        if [[ $skip_apt ]]; then
-            e_header "Skipping apt repo update"
-        else
-            sudo apt-get update
-            sudo apt-get upgrade -y
-        fi
-        apt_ppas
-        apt_install_standards
+    # elif on_deb; then
+    #     if [[ $skip_apt ]]; then
+    #         e_header "Skipping apt repo update"
+    #     else
+    #         sudo apt-get update
+    #         sudo apt-get upgrade -y
+    #     fi
+    #     apt_ppas
+    #     apt_install_standards
     fi
     # Install python packages
     run_pip
