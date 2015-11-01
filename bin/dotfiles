@@ -125,9 +125,9 @@ else
     #     fi
     #     apt_ppas
     #     apt_install_standards
+        # Install python packages
+        run_pip
     fi
-    # Install python packages
-    # run_pip
 fi
 
 link() {
