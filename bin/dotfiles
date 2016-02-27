@@ -125,9 +125,9 @@ else
     #     fi
     #     apt_ppas
     #     apt_install_standards
+        # Install python packages
+        run_pip
     fi
-    # Install python packages
-    # run_pip
 fi
 
 link() {
@@ -156,7 +156,6 @@ mirrorfiles() {
     link "git/gitignore"      ".gitignore"
     link "extra/Rprofile"     ".Rprofile"
     link "extra/ackrc"        ".ackrc"
-    link "extra/floorc"       ".floorc"
     link "emacs"              ".emacs.d"
     link "extra/profiles.clj" ".lein/profiles.clj"
 
