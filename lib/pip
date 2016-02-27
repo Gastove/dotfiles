@@ -29,6 +29,11 @@ run_pip() {
             'ipython'
             'pandas'
             'jinja2'
+            'rope'
+            'jedi'
+            'importmagic'
+            'autopep8'
+            'yapf'
         )
     fi
 
