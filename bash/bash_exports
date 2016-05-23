@@ -6,7 +6,7 @@
 if on_osx; then
     export EDITOR="ec"
 else
-    export EDITOR="emacs"
+    export EDITOR="emacsclient -t"
 fi
 
 # Ignore duplicate commands in the history

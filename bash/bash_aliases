@@ -52,7 +52,8 @@ catc(){ cat -n $1 | pygmentize -O style=twilight -f console256 -g;}
 # emacs
 alias et="emacsclient -t"
 alias estart="emacs --daemon"
-alias estop="emacsclient -e '\(kill-emacs\)'"
+alias estop="emacsclient -e '(kill-emacs)'"
+alias emg="emacsclient -t -e '(magit status)'"
 alias e=emacs
 
 # Heroku
