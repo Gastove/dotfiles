@@ -6,8 +6,6 @@ Thumbs.db
 ## Emacs
 # Emacs buffers
 .\#*
-# Org Mode files
-*.org
 # Emacs config stuffz.
 .dir-locals.el
 # Projects
