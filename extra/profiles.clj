@@ -1,5 +1,5 @@
 {:user
- {:plugins [[cider/cider-nrepl "0.13.0-SNAPSHOT"]
+ {:plugins [[cider/cider-nrepl "0.14.0-SNAPSHOT"]
             [lein-pprint "1.1.1"]
             [refactor-nrepl "2.3.0-SNAPSHOT"]
             [venantius/ultra "0.4.1"]]
