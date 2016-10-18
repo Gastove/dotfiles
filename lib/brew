@@ -30,6 +30,7 @@ run_brew() {
             'python'
             'mercurial'
             'sbt'
+            'maven'
             'scala'
             'emacs'
             'tree'
