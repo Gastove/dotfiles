@@ -12,7 +12,6 @@ declare -a dirs_to_append=(
     "/usr/bin"
     "$HOME/bin"
     "$HOME/.dotfiles/bin"
-    "$HOME/.rvm/bin"
 )
 
 # Prepend directories to PATH
