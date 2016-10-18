@@ -41,6 +41,7 @@ run_brew() {
             'zmq' # For IPython
             'ctags'
             'global --with-exuberant-ctags'
+            'the_silver_searcher'
             'https://raw.github.com/Homebrew/homebrew-dupes/master/rsync.rb' # Avoid using any custom OS X version of rsync
         )
 
