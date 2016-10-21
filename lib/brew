@@ -21,6 +21,7 @@ run_brew() {
             'ack'
             'aspell --with-lang=en'
             'bash-completion'
+            'coreutils' # GNU core utilities (those that come with OS X are outdated)
             'ctags'
             'emacs'
             'freetype' # For matplotlib
@@ -44,7 +45,6 @@ run_brew() {
             'tree'
             'wget'
             'zmq' # For IPython
-            'coreutils' # GNU core utilities (those that come with OS X are outdated)
         )
 
         for index in ${!desired_formulae[*]}
