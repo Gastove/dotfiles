@@ -20,7 +20,7 @@ cd ${DOTFILES_DIRECTORY}
 
 source ./lib/help
 source ./lib/utils
-source ./lib/pip
+# source ./lib/pip
 source ./lib/npm
 
 # OS-Specific Package Management
@@ -128,10 +128,10 @@ else
         apt_ppas
         apt_install_standards
         # Install python packages
-        run_pip
+        # run_pip
     elif on_fedora; then
         dnf_install_standards
-        run_pip
+        # run_pip
     fi
 fi
 
