@@ -23,6 +23,10 @@ source ./lib/utils
 source ./lib/pip
 source ./lib/npm
 
+type on_osx
+type on_ubuntu
+type on_fedora
+
 # OS-Specific Package Management
 if on_osx; then
     source ./lib/brew
