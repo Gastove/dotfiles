@@ -102,9 +102,16 @@ on_osx() {
     return 1
 }
 
-# Test whether we're on Debian
-on_deb() {
-    if [[ "$(uname -s)" == "Linux" ]]; then
+# Test whether we're on Ubuntu
+on_ubuntu() {
+    if [[ "$(python -mplatform)" == "Ubuntu" ]]; then
+        return 0
+    fi
+    return 1
+}
+
+on_fedora() {
+    if [[ "$(python -mplatform)" == "fedora" ]]; then
         return 0
     fi
     return 1
