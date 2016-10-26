@@ -106,15 +106,17 @@ on_osx() {
 on_ubuntu() {
     if [[ "$(python -mplatform)" == *"Ubuntu"* ]]; then
         return 0
+    else
+        return 1
     fi
-    return 1
 }
 
 on_fedora() {
     if [[ "$(python -mplatform)" == *"fedora"* ]]; then
         return 0
+    else
+        return 1
     fi
-    return 1
 }
 
 # Set default MySQL passwords for Debian
