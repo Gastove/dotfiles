@@ -178,6 +178,9 @@ defaults write com.apple.spotlight DictionaryLookupEnabled -bool false
 # Misc: disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
+# Disable the fricking emoji keyboard so Emacs can use it
+defaults write -g NSUserKeyEquivalents -dict-add 'Emoji & Symbols' '\0'
+
 for app in "Dashboard" "Dock" "Finder" "SystemUIServer" "Terminal" "iTunes"; do
     killall "$app" > /dev/null 2>&1
 done

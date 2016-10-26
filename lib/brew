@@ -23,6 +23,7 @@ run_brew() {
             'bash-completion'
             'coreutils' # GNU core utilities (those that come with OS X are outdated)
             'ctags'
+            'editorconfig'
             'emacs'
             'freetype' # For matplotlib
             'gcc' # Theoretically subsumes gfortran
