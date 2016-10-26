@@ -104,14 +104,14 @@ on_osx() {
 
 # Test whether we're on Ubuntu
 on_ubuntu() {
-    if [[ "$(python -mplatform)" == "Ubuntu" ]]; then
+    if [[ "$(python -mplatform)" == *"Ubuntu"* ]]; then
         return 0
     fi
     return 1
 }
 
 on_fedora() {
-    if [[ "$(python -mplatform)" == "fedora" ]]; then
+    if [[ "$(python -mplatform)" == *"fedora"* ]]; then
         return 0
     fi
     return 1
