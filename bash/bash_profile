@@ -38,7 +38,7 @@ if on_osx; then
 fi
 
 # Source OS defaults for things like colors, autocompletion
-if on_deb; then
+if on_ubuntu || on_fedora; then
     source /etc/bashrc
 fi
 

@@ -52,11 +52,6 @@ do
     esac
 done
 
-# Debian only; set default MySQL root password
-# if on_deb; then
-#     set_mysql_default_pass
-# fi
-
 # OSX only -- package management via Homebrew
 # Before relying on Homebrew, check that packages can be compiled
 if on_osx && ! type_exists 'gcc'; then
