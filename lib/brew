@@ -32,12 +32,15 @@ run_brew() {
             'htop'
             'https://raw.github.com/Homebrew/homebrew-dupes/master/rsync.rb' # Avoid using any custom OS X version of rsync
             'imagemagick'
+            'isync'
             'jpeg'
             'leiningen'
             'maven'
             'mercurial'
+            'EMACS=$(which emacs) mu --with-emacs'
             'npm'
             'optipng'
+            'pandoc'
             'pyqt' # Interactive pseudo-terminal
             'python'
             'sbt'
