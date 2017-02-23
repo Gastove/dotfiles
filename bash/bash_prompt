@@ -116,16 +116,16 @@ prompt_git() {
 prompt_venv() {
     local env_name
 
-    if ! [ -z "${VIRTUAL_ENV:?You are not in a virtualenv}" ]; then
+    if [ -z "$VIRTUAL_ENV" ]; then
         return 1
     fi
 
     env_name="${VIRTUAL_ENV##*/}"
 
-    printf "${SOLAR_ORANGE} using venv ${env_name}"
+    printf "${SOLAR_WHITE} using venv ${SOLAR_ORANGE}${env_name}"
 }
 
-if ! [ "$TERM"="dumb" ]; then
+if ! [ $TERM == "dumb" ]; then
     # Set the terminal title to the current working directory
     PS1="\[\033]0;\w\007\]"
     # Build the prompt
