@@ -20,29 +20,33 @@ run_brew() {
         local -a desired_formulae=(
             'ack'
             'aspell --with-lang=en'
+            'bash'
             'bash-completion'
             'coreutils' # GNU core utilities (those that come with OS X are outdated)
             'ctags'
             'editorconfig'
             'emacs'
+            'forge'
             'freetype' # For matplotlib
             'gcc' # Theoretically subsumes gfortran
             'git'
             'global --with-exuberant-ctags'
             'htop'
-            'https://raw.github.com/Homebrew/homebrew-dupes/master/rsync.rb' # Avoid using any custom OS X version of rsync
             'imagemagick'
             'isync'
             'jpeg'
+            'jq'
             'leiningen'
             'maven'
             'mercurial'
+            'mono'
             'EMACS=$(which emacs) mu --with-emacs'
             'npm'
             'optipng'
             'pandoc'
             'pyqt' # Interactive pseudo-terminal
             'python'
+            'rsync'
             'sbt'
             'scala'
             'the_silver_searcher'
