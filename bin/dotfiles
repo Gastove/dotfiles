@@ -119,6 +119,7 @@ else
         # Install Homebrew formulae
         run_brew
         run_npm
+        run_pip
     elif on_ubuntu; then
         apt_ppas
         apt_install_standards
