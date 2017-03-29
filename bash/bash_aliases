@@ -95,4 +95,8 @@ if on_osx; then
     # Hide/show all desktop icons (useful when presenting)
     alias showdeskicons="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
     alias hidedeskicons="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+
+    # FSharp Development utils:
+    alias fake="mono packages/FAKE/tools/FAKE.exe"
+    alias paket="mono .paket/paket.exe"
 fi
