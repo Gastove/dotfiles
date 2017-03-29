@@ -39,7 +39,7 @@ fi
 
 # Source OS defaults for things like colors, autocompletion
 if on_ubuntu || on_fedora; then
-    source /etc/bashrc
+    source /etc/bash_completion
 fi
 
 # Source Bash completion (installed via Homebrew)
