@@ -1,5 +1,14 @@
 #!/bin/bash
 
+install_emacs() {
+    if ! formula_exists "emacs-mac"
+    then
+        brew install emacs-mac --with-modern-icon --with-imagemagick
+        ln -sf /usr/local/opt/emacs-mac/Emacs.app /Applications
+        EMACS=$(which emacs) brew install mu --with-emacs
+    fi
+}
+
 run_brew() {
 
     # Check for Homebrew
@@ -25,7 +34,6 @@ run_brew() {
             'coreutils' # GNU core utilities (those that come with OS X are outdated)
             'ctags'
             'editorconfig'
-            'emacs'
             'forge'
             'freetype' # For matplotlib
             'gcc' # Theoretically subsumes gfortran
@@ -40,7 +48,6 @@ run_brew() {
             'maven'
             'mercurial'
             'mono'
-            'EMACS=$(which emacs) mu --with-emacs'
             'npm'
             'optipng'
             'pandoc'
@@ -73,6 +80,8 @@ run_brew() {
 
             [[ $? ]] && e_success "Done"
         fi
+
+        install_emacs
 
         # Remove outdated versions from the Cellar
         brew cleanup
