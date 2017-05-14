@@ -39,11 +39,7 @@ run_pip() {
 
     for index in ${!desired_pip_packages[*]}
     do
-        if ! pip_package_installed ${desired_pip_packages[index]}; then
-            pip install ${desired_pip_packages[index]}
-        else
-            pip install --upgrade ${desired_pip_packages[index]}
-        fi
+        pip install --upgrade ${desired_pip_packages[index]}
     done
 
     unset desired_pip_packages
