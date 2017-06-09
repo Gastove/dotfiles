@@ -46,8 +46,8 @@ alias pgrp="ps ax | grep"
 alias catn="cat -n"
 
 # Fancycat(tm) -- hat-tip @wilto
-alias c="pygmentize -O style=tango -f console256 -g"
-catc(){ cat $1 | pygmentize -O style=tango -f console256 -g;}
+alias c="pygmentize -O style=monokai -f console256 -g"
+catc(){ pygmentize -O style=monokai -f console256 $1; }
 
 # Parse you a json
 alias j="jq '.'"
