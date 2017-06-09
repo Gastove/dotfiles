@@ -69,7 +69,7 @@ alias aliases="cat ~/.dotfiles/bash/bash_aliases | c"
 if on_osx; then
     # Additional Emacs aliases
     #    alias ec='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n'
-    alias emacs='open -a /Applications/Emacs.app $1'
+    # alias emacs='open -a /Applications/Emacs.app $1'
 
     # IP addresses
     alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
