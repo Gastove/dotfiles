@@ -54,6 +54,7 @@ run_brew() {
             'pandoc'
             'pyqt' # Interactive pseudo-terminal
             'python'
+            'python3'
             'rsync'
             'sbt'
             'scala'
