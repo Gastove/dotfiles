@@ -6,7 +6,7 @@ run_pip() {
 
     if [[ on_ubuntu && ! "$(pip list)" ]]; then
         printf "Updating pip"
-        curl -fsSL https://raw.github.com/pypa/pip/master/contrib/get-pip.py | sudo python
+        pip2 install --upgrade pip
     fi
 
     local -a desired_pip_packages=(
@@ -16,7 +16,6 @@ run_pip() {
         'virtualenvwrapper'
         'httpie'
         'Pygments'
-        'pip'
     )
 
     # OSX Needs certain pip packages Debian can get from apt
