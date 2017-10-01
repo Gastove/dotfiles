@@ -3,11 +3,7 @@
 run_pip() {
 
     # Make sure we're using a recent version of pip
-
-    if [[ on_ubuntu && ! "$(pip list)" ]]; then
-        printf "Updating pip"
-        pip2 install --upgrade pip
-    fi
+    pip2 install --upgrade pip
 
     local -a desired_pip_packages=(
         'distribute --upgrade'
