@@ -39,7 +39,7 @@ run_pip() {
 
     for index in ${!desired_pip_packages[*]}
     do
-        pip install --upgrade ${desired_pip_packages[index]}
+        pip2 install --upgrade ${desired_pip_packages[index]}
     done
 
     unset desired_pip_packages
